@@ -73,9 +73,9 @@ else:
         st.write("""
         We'd love to hear from you! Whether you have a project in mind or just want to learn more about what we do, feel free to get in touch.
         """)
-        st.write("**Email:** contact@reelstreamventures.com")
-        st.write("**Phone:** (123) 456-7890")
-        st.write("**Address:** 123 Reel Street, Filmtown, CA")
+        st.write("**Email:** reelstreamventures@proton.me")
+        st.write("**Phone:** (0049) 1742584800")
+        st.write("**Address:** Aachen, Germany")
 
         # Contact Form
         st.subheader("Send us a message")
