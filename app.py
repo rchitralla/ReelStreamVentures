@@ -24,7 +24,7 @@ selection = st.sidebar.radio("Go to", ["Home", "About Us", "Services", "Contact"
 # Home Page
 if selection == "Home":
     st.title("Welcome to ReelStreamVentures!")
-    st.image("ReelSTREAM (4).png", use_column_width=True)
+    st.image("Image.png", use_column_width=True)
     st.write("""
     At ReelStreamVentures, we specialize in creating high-quality video productions that tell compelling stories. 
     From concept to completion, our team is dedicated to bringing your vision to life.
@@ -33,7 +33,7 @@ if selection == "Home":
 # About Us Page
 elif selection == "About Us":
     st.title("About ReelStreamVentures")
-    st.image("ReelSTREAM (4).png", use_column_width=True)
+    st.image("Image.png", use_column_width=True)
     st.write("""
     ReelStreamVentures was founded with the mission of providing exceptional video production services. Our team consists of experienced professionals who are passionate about storytelling and dedicated to producing top-notch content.
     """)
@@ -41,7 +41,7 @@ elif selection == "About Us":
 # Services Page
 elif selection == "Services":
     st.title("Our Services")
-    st.image("ReelSTREAM (4).png", use_column_width=True)
+    st.image("Image.png", use_column_width=True)
     st.write("""
     We offer a wide range of services to meet your production needs:
     - **Pre-Production**: Concept Development, Scriptwriting, Storyboarding
@@ -53,7 +53,7 @@ elif selection == "Services":
 # Contact Page
 elif selection == "Contact":
     st.title("Contact Us")
-    st.image("ReelSTREAM (4).png", use_column_width=True)
+    st.image("Image.png", use_column_width=True)
     st.write("""
     We'd love to hear from you! Whether you have a project in mind or just want to learn more about what we do, feel free to get in touch.
     """)
