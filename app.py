@@ -50,6 +50,14 @@ elif selection == "Services":
     - **Additional Services**: Live Streaming, Event Coverage, Corporate Videos
     """)
 
+# Project Stargate
+elif selection == "Project Stargate - an unscientific comedy":
+    st.title("Project Stargate - an unscientific comedy")
+    st.image("Image.png", use_column_width=True)
+    st.write("""
+    Our first pilot episode has been written, produced and directed by Regina Chitralla. 
+    """)
+
 # Contact Page
 elif selection == "Contact":
     st.title("Contact Us")
