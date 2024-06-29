@@ -1,4 +1,8 @@
 import streamlit as st
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import os
 
 # Set up the main page configurations
 st.set_page_config(
@@ -19,7 +23,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 # Sidebar Navigation
 st.sidebar.title("ReelStreamVentures")
 st.sidebar.subheader("Navigation")
-selection = st.sidebar.radio("Go to", ["Home", "About Us", "Services", "Contact"])
+selection = st.sidebar.radio("Go to", ["Home", "About Us", "Services", "Project Stargate - an unscientific comedy", "Contact"])
 
 # Home Page
 if selection == "Home":
@@ -54,7 +58,8 @@ elif selection == "Services":
 elif selection == "Project Stargate - an unscientific comedy":
     st.title("Project Stargate - an unscientific comedy")
     st.image("Image.png", use_column_width=True)
-    st.write("""Our first pilot episode has been written, produced and directed by Regina Chitralla. 
+    st.write("""
+    Our first pilot episode has been written, produced, and directed by Regina Chitralla.
     """)
 
 # Contact Page
@@ -67,6 +72,40 @@ elif selection == "Contact":
     st.write("**Email:** reelstreamventures@proton.me")
     st.write("**Phone:** +491742584800")
     st.write("**Address:** Aachen, Germany")
+
+    # Contact Form
+    st.subheader("Send us a message")
+    with st.form("contact_form"):
+        name = st.text_input("Your Name")
+        email = st.text_input("Your Email")
+        message = st.text_area("Your Message")
+        submitted = st.form_submit_button("Send")
+
+        if submitted:
+            # Send the email
+            sender_email = os.getenv('EMAIL_USER')
+            receiver_email = "reelstreamventures@proton.me"
+            password = os.getenv('EMAIL_PASS')
+            
+            msg = MIMEMultipart()
+            msg['From'] = sender_email
+            msg['To'] = receiver_email
+            msg['Subject'] = f"New contact form submission from {name}"
+
+            body = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+            msg.attach(MIMEText(body, 'plain'))
+
+            try:
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.starttls()
+                server.login(sender_email, password)
+                text = msg.as_string()
+                server.sendmail(sender_email, receiver_email, text)
+                server.quit()
+
+                st.success("Thank you for reaching out! We'll get back to you soon.")
+            except Exception as e:
+                st.error(f"An error occurred: {e}")
 
 # Run the app
 if __name__ == '__main__':
