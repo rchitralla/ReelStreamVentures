@@ -61,7 +61,7 @@ elif selection == "Contact":
     st.write("**Phone:** +491742584800")
     st.write("**Address:** Aachen, Germany")
 
-    # Contact Form
+  """  # Contact Form
     st.subheader("Send us a message")
     with st.form("contact_form"):
         name = st.text_input("Your Name")
@@ -69,7 +69,7 @@ elif selection == "Contact":
         message = st.text_area("Your Message")
         submitted = st.form_submit_button("Send")
         if submitted:
-            st.write("Thank you for reaching out! We'll get back to you soon.")
+            st.write("Thank you for reaching out! We'll get back to you soon.")"""
 
 # Run the app
 if __name__ == '__main__':
