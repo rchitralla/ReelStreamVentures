@@ -54,8 +54,7 @@ elif selection == "Services":
 elif selection == "Project Stargate - an unscientific comedy":
     st.title("Project Stargate - an unscientific comedy")
     st.image("Image.png", use_column_width=True)
-    st.write("""
-    Our first pilot episode has been written, produced and directed by Regina Chitralla. 
+    st.write("""Our first pilot episode has been written, produced and directed by Regina Chitralla. 
     """)
 
 # Contact Page
